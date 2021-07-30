@@ -3,8 +3,8 @@ const favoriteController = require('../controllers/favorites.controller');
 
 const router = express.Router();
 
-router.put('/favmusic', favoriteController.upsert);
-router.get('/favmusic/:id', favoriteController.getFavorite);
-
+router.put('/favmusic', favoriteController.upsertFavorite);
+router.get('/favmusic/:userId', favoriteController.getFavoriteByUser);
+router.delete('/favmusic/:userId/song/:song',favoriteController.deleteFavoriteMusicByUserAndSong)
 
 module.exports = router;

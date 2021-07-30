@@ -15,50 +15,48 @@ userService.createUser = async function ({ name, email, password}){
   }
 };
 
-userService.getUsers = async function () {
+userService.getUsers = async function (query) {
   try {
-    const users = await User.find({});
-    return users;
+    const users = await User.find(query);
+    console.log('users', users)
+    return users.map(user => {
+      let getUser = JSON.parse(JSON.stringify(user))
+      delete getUser.password;
+      return getUser;
+    })
   } catch (e) {
     console.log(e.message)
     throw new Error('Error while paginating users');
   }
 };
 
-userService.getUser = async function ({ id }) {
+userService.getUser = async function ({ userId }) {
   try {
-    const user = await User.findById(id);
-    let getUser = JSON.parse(JSON.stringify(user));
-    delete getUser.password;
-    return getUser;
+      const user = await User.findById(userId);
+      let savableUser = JSON.parse(JSON.stringify(user));
+      delete savableUser.password;
+      return savableUser;
   } catch (e) {
-    console.log(e.message)
-    throw new Error('Error while returning user');
+      console.log(e.message);
+      throw Error('Error while returning User')
   }
-  
-};
+}
 
-userService.updateUser = async function ({ id }, { name, email, password }) {
-  try {
-    const user = await User.findById(id);
-    const updateUser = await user.set({ name, email, password });
-    await updateUser.save();
-    return updateUser;
-  } catch (e) {
-    console.log(e.message)
-    throw new Error('Error while update user');
-  }
-};
 
-userService.deleteUser = async function ({ id }) {
+
+userService.updateUser = async function ({id},{name, email, password}) {
   try {
-    const user = await User.findByIdAndRemove(id);
-    return user;
+      const user = await User.findById(id);
+      const updateUser = await user.set({ name, email, password: md5(password) });
+      await updateUser.save();
+      return updateUser;
   } catch (e) {
-    console.log(e.message);
-    throw new Error('Error while delete user');
+      console.log(e.message);
+      throw new Error('Error while update user');
   }
-};
+}
+
+
 
 
 

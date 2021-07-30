@@ -11,12 +11,9 @@ recentController.upsert = async function (req, res, next) {
   }
 };
 
-recentController.getRecent = async function (req, res,next){
+recentController.getRecentByUser = async function (req, res,next){
   try{
-      const recent = await recentService.getRecent(req.params)
-      if(recent == null){
-          return res.status(400).json({message: "Cannot find favlist"})
-      }
+      const recent = await recentService.getRecentByUser(req.params)
       return res.status(200).json({ status: 200, data: recent, message: "Successufully recentlist retrived"})
       }catch(error){
           return res.status(400).json({status:400, message: error.message})
