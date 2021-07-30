@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;500;700&family=Righteous&display=swap" rel="stylesheet">
+        <title>Stellar Waves</title>
+    </head>
+    <body>
+        <div class="wrapper clearfix">
+            <div class="logo">
+                <img src="./img/logo.png" alt="">
+            </div>
+            <div class="forms__container">
+                <div class="form__login">
+                    <form action="/authenticate" method="POST">
+                        <h2>Sign In</h2>
+                        <label for="email-sign-in">Email:</label>
+                        <input type="email" id="email-sign-in">
+                        <label for="password-sing-in">Password:</label>
+                        <input type="password" id="password-sing-in">
+                        <button type="submit" class="primary__button">Sign in</button>
+                    </form>
+                </div>
+                <div class="form__register">
+                    <form action="" method="POST">
+                        <h2>Create Account</h2>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name">
+                        <label for="email-register">Email:</label>
+                        <input type="email" id="email-register">
+                        <label for="pass-register">Password:</label>
+                        <input type="password" id="pass-register">
+                        <label for="confirm-pass-register">Confirm Password:</label>
+                        <input type="password" id="confirm-pass-register">
+                        <button type="submit" class="primary__button">Register</button>
+                    </form>
+                </div>
+            </div>
+            <p class="copyright">Copyright © 2021 All rights reserved</p>
+        </div>
+    </body>
+</html>

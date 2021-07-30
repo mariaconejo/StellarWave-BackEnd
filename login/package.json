@@ -1,0 +1,36 @@
+{
+  "name": "stellarwave-backend",
+  "version": "1.0.0",
+  "description": "Proyecto final de node.js ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariaconejo/StellarWave-BackEnd.git"
+  },
+  "keywords": [
+    "mediaplayer",
+    "backend"
+  ],
+  "author": "Jeareth Venegas y Maria Conejo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariaconejo/StellarWave-BackEnd/issues"
+  },
+  "homepage": "https://github.com/mariaconejo/StellarWave-BackEnd#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "md5": "^2.3.0",
+    "mongoose": "^5.13.4",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7"
+  }
+}
