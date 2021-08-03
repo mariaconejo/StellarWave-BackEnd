@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+// modelo de la coleccion playlist del usuario
+
 const playlistMusicSchema = mongoose.Schema({
   name: {
       type: String,
